@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "react-hot-toast";
+import { ModalProvider } from "@/components/modal-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,7 +35,9 @@ return (
       <body
         className={`${montserrat.variable} antialiased`}
       >
+        <Toaster/>
         {children}
+        <ModalProvider />
       </body>
     </html>
 </ClerkProvider>

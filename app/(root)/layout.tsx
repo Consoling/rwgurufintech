@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import React from 'react'
 
 interface LandingLayoutProps {
@@ -6,7 +7,9 @@ interface LandingLayoutProps {
 
 const LandingLayout = ({children}: LandingLayoutProps) => {
   return (
-    <div className='bg-[#0d2845]'>{children}</div>
+    <div className='bg-[#0d2845] h-full'>
+          <Navbar />
+      {children}</div>
   )
 }
 
