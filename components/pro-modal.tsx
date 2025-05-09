@@ -35,31 +35,31 @@ import toast from "react-hot-toast";
 const tools = [
     {
       label: "Financial Chat",
-      icon: MessageSquare, // e.g., AI-powered Q&A on finance
+      icon: MessageSquare, 
       color: "text-indigo-500",
       bgColor: "bg-indigo-500/10",
     },
     {
       label: "Budget Planner",
-      icon: Wallet, // Use a wallet icon or similar
+      icon: Wallet, 
       color: "text-green-500",
       bgColor: "bg-green-500/10",
     },
     {
       label: "Investment Insights",
-      icon: BarChart, // A chart icon for trends or analysis
+      icon: BarChart, 
       color: "text-yellow-500",
       bgColor: "bg-yellow-500/10",
     },
     {
       label: "Risk Assessment",
-      icon: AlertTriangle, // Warning or alert icon
+      icon: AlertTriangle, 
       color: "text-red-500",
       bgColor: "bg-red-500/10",
     },
     {
       label: "Tax Estimator",
-      icon: Percent, // Percent sign for tax-related features
+      icon: Percent, 
       color: "text-blue-600",
       bgColor: "bg-blue-600/10",
     },

@@ -8,11 +8,36 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  clerkId   String   @unique
-  userName  String   @unique
-  email     String   @unique
-  password  String
+  id             Int                 @id @default(autoincrement())
+  clerkId        String              @unique
+  userName       String              @unique
+  email          String              @unique
+  password       String?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+  authentication UserAuthentication?
+  apiLimit       UserApiLimit?
+  totpSecret     String?
+  isTotpEnabled  Boolean             @default(false)
+}
+
+model UserApiLimit {
+  id        String   @id @default(cuid())
+  userId    Int      @unique
+  count     Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model UserAuthentication {
+  id         String   @id @default(cuid())
+  userId     Int      @unique
+  provider   String
+  providerId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
 }

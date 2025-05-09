@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import { ModalProvider } from "@/components/modal-provider";
+import { UserDetailsProvider } from "@/providers/modal-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ return (
         <Toaster/>
         {children}
         <ModalProvider />
+        <UserDetailsProvider />
       </body>
     </html>
 </ClerkProvider>
